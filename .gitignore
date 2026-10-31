@@ -1,3 +1,5 @@
 /dist/
+/.lzc-cli-build*/
+/.lazycat-action/
 *.lpk
 *.lpks
