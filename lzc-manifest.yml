@@ -19,7 +19,8 @@ application:
         ctx.headers.set("Host", ctx.request.host);
 services:
   roon-beacon:
-    image: ghcr.io/ca-x/roon-beacon:0.2.0
+    # upstream: ghcr.io/ca-x/roon-beacon:0.2.0
+    image: ghcr.1ms.run/ca-x/roon-beacon:0.2.0
     network_mode: host
     command: --web-bind 0.0.0.0:39339 --data-dir /data --enable-audio
     environment:
@@ -27,7 +28,7 @@ services:
     binds:
       - /lzcapp/var/data:/data
     healthcheck:
-      test: [CMD, wget, -q, --spider, http://127.0.0.1:39339/api/health]
+      test: [CMD, wget, -q, --spider, 'http://127.0.0.1:39339/api/health']
       interval: 30s
       timeout: 5s
       retries: 3
