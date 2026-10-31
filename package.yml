@@ -1,0 +1,15 @@
+package: community.lazycat.app.roon-beacon
+version: 0.2.0
+name: Roon Beacon
+description: Discover Roon Cores, control playback, and listen in your browser.
+license: GPL-3.0-only
+homepage: https://github.com/ca-x/roon-beacon
+author: ca-x
+min_os_version: 1.5.0
+locales:
+  en:
+    name: Roon Beacon
+    description: Discover Roon Cores, control playback, and listen in your browser.
+  zh:
+    name: Roon Beacon
+    description: 发现局域网 Roon Core，网页遥控音乐，实验性支持浏览器收听。

@@ -1,0 +1,39 @@
+version: 1
+project:
+  root: .
+  build_config: lzc-build.yml
+  package_file: package.yml
+  output: dist/roon-beacon.lpk
+  target_arch: amd64
+update:
+  strategy: publish
+  allow_downgrade: false
+  version_source:
+    type: image
+    image: roon-beacon
+build:
+  toolchains: []
+  run_buildscript: false
+images:
+  - id: roon-beacon
+    target: service
+    service: roon-beacon
+    source: ghcr.io/ca-x/roon-beacon
+    channel: stable
+    sort: semver
+    tag_regex: '^\d+\.\d+\.\d+$'
+    delivery:
+      mode: mirror
+      require_digest_match: true
+release:
+  github_repository: ca-x/roon-beacon
+  use_github_release_notes: true
+  store_changelog_format: plain
+stores:
+  official:
+    enabled: false
+  private:
+    enabled: true
+    skip_if_version_exists: true
+    name: Roon Beacon
+    summary: 局域网 Roon 发现、网页播放控制与实验性浏览器收听
