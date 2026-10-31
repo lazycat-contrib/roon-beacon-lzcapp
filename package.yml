@@ -1,5 +1,5 @@
 package: community.lazycat.app.roon-beacon
-version: 0.2.0
+version: 0.2.1
 name: Roon Beacon
 description: Discover Roon Cores, control playback, and listen in your browser.
 license: GPL-3.0
